@@ -1,0 +1,634 @@
+
+/* ==========================================================================
+   ISHARA AI — USER PROFILE & SETTINGS (LIGHT THEME)
+   ========================================================================== */
+
+.ish-profile-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F6F7F3;
+  color: #172A28;
+}
+
+.ish-profile-shell {
+  width: min(100% - 3rem, 1000px);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3rem) 0 4rem;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Page Heading
+   ========================================================================== */
+
+.ish-profile-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ish-profile-heading h1 {
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  color: #172A28;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.ish-profile-heading p {
+  color: #64748B;
+  font-size: var(--ish-text-sm);
+}
+
+.ish-profile-back {
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: #187C65;
+  text-decoration: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--ish-radius-sm);
+  background: #EAF5F0;
+  border: 1px solid #CFE5DA;
+  transition: background var(--ish-transition-fast), color var(--ish-transition-fast);
+}
+
+.ish-profile-back:hover {
+  background: #DCEFE6;
+  color: #12634F;
+}
+
+/* ==========================================================================
+   Identity Summary Banner
+   ========================================================================== */
+
+.ish-profile-identity {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F0F7F3 100%);
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.05);
+}
+
+.ish-profile-large-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #EAF5F0;
+  border: 2px solid #187C65;
+  color: #187C65;
+  font-family: var(--ish-font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(24, 124, 101, 0.12);
+}
+
+.ish-profile-identity-copy {
+  flex: 1;
+}
+
+.ish-profile-identity-copy h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #172A28;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.ish-profile-identity-copy p {
+  color: #64748B;
+  font-size: var(--ish-text-sm);
+}
+
+.ish-identity-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+}
+
+/* ==========================================================================
+   Verification Status
+   ========================================================================== */
+
+.ish-profile-verification {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+}
+
+.ish-profile-verification i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.ish-profile-verification.is-verified {
+  background: #EAF5F0;
+  border: 1px solid #B9DDCB;
+  color: #187C65;
+}
+
+.ish-profile-verification.is-verified i {
+  background: #187C65;
+}
+
+.ish-profile-verification.is-unverified {
+  background: #FFF7E5;
+  border: 1px solid #F3DDAA;
+  color: #A66A0A;
+}
+
+.ish-profile-verification.is-unverified i {
+  background: #D99A21;
+}
+
+.ish-profile-verification.is-unknown {
+  background: #F1F5F4;
+  border: 1px solid #DFE6E1;
+  color: #64748B;
+}
+
+.ish-profile-verification.is-unknown i {
+  background: #94A3B8;
+}
+
+/* ==========================================================================
+   Edit Profile Button
+   ========================================================================== */
+
+.ish-profile-edit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--ish-radius-md);
+  background: #EAF5F0;
+  border: 1px solid #CFE5DA;
+  color: #187C65;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--ish-transition-fast), border-color var(--ish-transition-fast);
+}
+
+.ish-profile-edit-button:hover {
+  background: #DCEFE6;
+  border-color: #187C65;
+}
+
+.ish-profile-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ==========================================================================
+   Details Grid (Cards)
+   ========================================================================== */
+
+.ish-profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.ish-profile-card {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.05);
+}
+
+.ish-profile-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ish-profile-card-title span {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--ish-radius-md);
+  background: #EAF5F0;
+  border: 1px solid #D4E9DD;
+  color: #187C65;
+  display: grid;
+  place-items: center;
+}
+
+.ish-profile-card-title h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #172A28;
+}
+
+.ish-profile-dl {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.ish-profile-dl dt {
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 0.25rem;
+}
+
+.ish-profile-dl dd {
+  margin: 0;
+  font-size: var(--ish-text-base);
+  font-weight: 600;
+  color: #172A28;
+}
+
+.ish-profile-support-note {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Account Settings Cards
+   ========================================================================== */
+
+.ish-profile-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.ish-profile-setting-card {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.05);
+}
+
+.ish-profile-setting-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--ish-radius-md);
+  background: #EAF5F0;
+  border: 1px solid #D4E9DD;
+  color: #187C65;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.ish-profile-setting-copy {
+  flex: 1;
+}
+
+.ish-profile-setting-copy h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #172A28;
+  margin-bottom: 0.25rem;
+}
+
+.ish-profile-setting-copy p {
+  color: #64748B;
+  font-size: var(--ish-text-xs);
+}
+
+.ish-profile-setting-action {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  color: #172A28;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background var(--ish-transition-fast), border-color var(--ish-transition-fast);
+}
+
+.ish-profile-setting-action:hover {
+  background: #EAF5F0;
+  border-color: #B9D8C9;
+  color: #187C65;
+}
+
+.ish-profile-setting-action.is-signout:hover {
+  background: #FEF0EF;
+  border-color: #F5C7C3;
+  color: #C83D37;
+}
+
+/* ==========================================================================
+   Edit Mode Form
+   ========================================================================== */
+
+.ish-profile-edit-form {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  padding: 2.25rem;
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.05);
+  margin-bottom: 2rem;
+}
+
+.ish-profile-edit-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.15rem;
+  border-radius: var(--ish-radius-md);
+  background: #FFF7E5;
+  border: 1px solid #F3DDAA;
+  color: #98630F;
+  margin-bottom: 2rem;
+  font-size: var(--ish-text-xs);
+}
+
+.ish-profile-edit-identity {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #DFE6E1;
+}
+
+.ish-profile-picture-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ish-profile-picture-preview {
+  object-fit: cover;
+}
+
+.ish-profile-picture-input {
+  display: none;
+}
+
+.ish-profile-picture-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--ish-radius-sm);
+  background: #EAF5F0;
+  border: 1px solid #CFE5DA;
+  color: #187C65;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--ish-transition-fast);
+}
+
+.ish-profile-picture-button:hover {
+  background: #DCEFE6;
+}
+
+.ish-profile-preview-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #A66A0A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Edit Form Fields
+   ========================================================================== */
+
+.ish-profile-edit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.ish-profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.ish-profile-field input {
+  height: 3.1rem;
+  padding: 0 1rem;
+  border-radius: var(--ish-radius-md);
+  border: 1px solid #DFE6E1;
+  background: #FFFFFF;
+  color: #172A28;
+  font-size: var(--ish-text-sm);
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.ish-profile-field input:focus {
+  outline: none;
+  border-color: #187C65;
+  box-shadow: 0 0 0 3px rgba(24, 124, 101, 0.12);
+}
+
+.ish-profile-field input[readOnly] {
+  background: #F1F5F4;
+  color: #64748B;
+  cursor: not-allowed;
+}
+
+.ish-profile-readonly-note {
+  font-size: 0.72rem;
+  color: #64748B;
+  text-transform: none;
+  font-weight: normal;
+  margin-top: 0.25rem;
+}
+
+.ish-profile-field-error,
+.ish-profile-picture-error {
+  color: #C83D37;
+  font-size: var(--ish-text-xs);
+  font-weight: 600;
+  text-transform: none;
+}
+
+.ish-profile-edit-help {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   Edit Form Actions
+   ========================================================================== */
+
+.ish-profile-edit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.ish-profile-cancel-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  color: #172A28;
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+  cursor: pointer;
+  transition: background var(--ish-transition-fast);
+}
+
+.ish-profile-cancel-button:hover {
+  background: #F1F5F4;
+}
+
+.ish-profile-save-button {
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--ish-radius-md);
+  background: #187C65;
+  border: 1px solid #187C65;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: var(--ish-text-sm);
+  box-shadow: 0 2px 8px rgba(24, 124, 101, 0.18);
+  cursor: pointer;
+  transition: background var(--ish-transition-fast);
+}
+
+.ish-profile-save-button:hover {
+  background: #12634F;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.ish-profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .ish-profile-shell {
+    width: min(100% - 2rem, 1000px);
+  }
+
+  .ish-profile-identity {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ish-identity-right {
+    align-items: center;
+  }
+
+  .ish-profile-details,
+  .ish-profile-edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ish-profile-setting-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ish-profile-setting-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ish-profile-edit-identity {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ish-profile-edit-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ish-profile-shell {
+    width: min(100% - 1.25rem, 1000px);
+  }
+
+  .ish-profile-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ish-profile-card {
+    padding: 1.35rem;
+  }
+
+  .ish-profile-setting-card {
+    padding: 1.25rem;
+  }
+
+  .ish-profile-edit-form {
+    padding: 1.15rem;
+  }
+
+  .ish-profile-edit-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .ish-profile-cancel-button,
+  .ish-profile-save-button {
+    width: 100%;
+  }
+}

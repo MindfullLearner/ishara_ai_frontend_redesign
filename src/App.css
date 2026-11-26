@@ -1,0 +1,641 @@
+/* ==========================================================================
+   ISHARA AI — SHARED AUTHENTICATION & FORM STYLES
+   Light Theme (Auth & Administration)
+   ========================================================================== */
+
+.ish-auth-page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--ish-light-bg);
+  color: var(--ish-light-text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.ish-auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(360px, 44%) minmax(0, 1fr);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Brand Side Panel (Atmospheric Emerald Gradient)
+   ========================================================================== */
+.ish-auth-brand {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  background: linear-gradient(155deg, #0D2620 0%, #123C32 40%, #185E4E 80%, #1A705B 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ish-brand-backdrop-glow {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 216, 186, 0.22) 0%, transparent 70%);
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ish-brand-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ish-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--ish-font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+  transition: opacity var(--ish-transition-fast);
+}
+
+.ish-brand-logo:hover {
+  opacity: 0.92;
+}
+
+.ish-brand-logo-symbol {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--ish-radius-md);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #64D8BA;
+  backdrop-filter: blur(8px);
+}
+
+.ish-brand-name span {
+  color: #64D8BA;
+}
+
+.ish-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--ish-radius-full);
+  background: rgba(100, 216, 186, 0.15);
+  border: 1px solid rgba(100, 216, 186, 0.3);
+  color: #64D8BA;
+  font-size: var(--ish-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ish-brand-message {
+  position: relative;
+  z-index: 1;
+  max-width: 460px;
+  margin: 3.5rem 0;
+}
+
+.ish-brand-tagline {
+  display: inline-block;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64D8BA;
+  margin-bottom: 0.85rem;
+}
+
+.ish-brand-message h1 {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 3.8vw, 3.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.ish-brand-message p {
+  color: rgba(241, 245, 244, 0.82);
+  font-size: var(--ish-text-base);
+  line-height: 1.68;
+  margin-bottom: 2rem;
+}
+
+.ish-brand-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ish-brand-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--ish-text-sm);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ish-highlight-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(100, 216, 186, 0.18);
+  color: #64D8BA;
+  flex-shrink: 0;
+}
+
+.ish-brand-footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ish-brand-footer-text {
+  font-size: var(--ish-text-xs);
+  color: rgba(241, 245, 244, 0.65);
+  line-height: 1.5;
+}
+
+.ish-brand-decoration {
+  position: absolute;
+  right: -5rem;
+  bottom: -5rem;
+  width: 320px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ish-deco-circle-1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(100, 216, 186, 0.2);
+  animation: ish-spin-slow 40s linear infinite;
+}
+
+.ish-deco-circle-2 {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24, 124, 101, 0.35) 0%, transparent 70%);
+}
+
+@keyframes ish-spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Form Panel (Light Theme Surface)
+   ========================================================================== */
+.ish-auth-main {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ish-light-bg);
+}
+
+.ish-auth-card {
+  width: min(100%, 460px);
+  padding: clamp(2rem, 3.5vw, 2.75rem);
+  border-radius: var(--ish-radius-2xl);
+  background: var(--ish-light-surface);
+  border: 1px solid var(--ish-light-border);
+  box-shadow: var(--ish-light-shadow-md);
+  transition: transform var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.ish-login-card {
+  width: min(100%, 450px);
+}
+
+.ish-signup-card {
+  width: min(100%, 500px);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.ish-simple-auth-card {
+  width: min(100%, 460px);
+}
+
+/* Card Heading */
+.ish-card-heading {
+  margin-bottom: 1.75rem;
+}
+
+.ish-card-heading h2 {
+  color: var(--ish-light-text-primary);
+  font-size: clamp(1.6rem, 2.2vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.45rem;
+}
+
+.ish-card-heading p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  line-height: 1.55;
+}
+
+/* Auth Forms */
+.ish-auth-form,
+.ish-simple-auth-form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.ish-signup-form {
+  gap: 1.05rem;
+}
+
+/* Form Fields */
+.ish-form-field {
+  display: grid;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.ish-form-field label {
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ish-form-field input {
+  width: 100%;
+  height: 3.1rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  color: var(--ish-light-text-primary);
+  background: #FFFFFF;
+  font-size: var(--ish-text-base);
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast), background-color var(--ish-transition-fast);
+}
+
+.ish-form-field input::placeholder {
+  color: var(--ish-light-text-muted);
+}
+
+.ish-form-field input:hover {
+  border-color: var(--ish-light-border-strong);
+}
+
+.ish-form-field input:focus {
+  outline: none;
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.ish-form-field input:disabled {
+  background: var(--ish-light-surface-subtle);
+  color: var(--ish-light-text-muted);
+  cursor: not-allowed;
+}
+
+.ish-form-field input[aria-invalid="true"] {
+  border-color: var(--ish-error);
+  background: #FFFDFD;
+}
+
+.ish-field-error {
+  color: var(--ish-error);
+  font-size: var(--ish-text-xs);
+  line-height: 1.4;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+/* Password Field */
+.ish-password-field {
+  position: relative;
+  width: 100%;
+}
+
+.ish-password-field input {
+  padding-right: 4.8rem;
+}
+
+.ish-eye-button {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  height: 2.2rem;
+  padding: 0 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ish-radius-sm);
+  color: var(--ish-light-accent);
+  background: transparent;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--ish-transition-fast), color var(--ish-transition-fast);
+}
+
+.ish-eye-button:hover:not(:disabled) {
+  background: var(--ish-light-accent-subtle);
+}
+
+.ish-eye-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ish-password-requirements {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.95rem;
+  list-style: none;
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+}
+
+.ish-password-requirements li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ish-password-requirements li::before {
+  content: "•";
+  color: var(--ish-light-accent);
+  font-weight: 800;
+}
+
+/* Form Options */
+.ish-auth-form-options {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.25rem;
+  font-size: var(--ish-text-xs);
+  font-weight: 600;
+}
+
+.ish-auth-form-options a,
+.ish-signup-existing a,
+.ish-auth-bottom-link a,
+.ish-create-link a {
+  color: var(--ish-light-accent);
+  text-decoration: none;
+  transition: color var(--ish-transition-fast), text-decoration var(--ish-transition-fast);
+}
+
+.ish-auth-form-options a:hover,
+.ish-signup-existing a:hover,
+.ish-auth-bottom-link a:hover,
+.ish-create-link a:hover {
+  color: var(--ish-light-accent-hover);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.ish-button,
+.ish-primary-button {
+  min-height: 3.1rem;
+  padding: 0.75rem 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: var(--ish-radius-md);
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--ish-transition-fast), transform var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.ish-button--primary,
+.ish-primary-button {
+  width: 100%;
+  color: #FFFFFF;
+  background: var(--ish-light-accent);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 8px rgba(24, 124, 101, 0.22);
+}
+
+.ish-button--primary:hover:not(:disabled),
+.ish-primary-button:hover:not(:disabled) {
+  background: var(--ish-light-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 124, 101, 0.28);
+}
+
+.ish-button--primary:active:not(:disabled),
+.ish-primary-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ish-button:disabled,
+.ish-primary-button:disabled {
+  background: #A9BDB9;
+  color: #FFFFFF;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Feedback & Alerts */
+.ish-feedback {
+  padding: 0.95rem 1.15rem;
+  border-radius: var(--ish-radius-md);
+  font-size: var(--ish-text-sm);
+  line-height: 1.55;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ish-feedback-title {
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+}
+
+.ish-feedback--error {
+  color: #8C1D26;
+  background: #FDF2F2;
+  border-color: #F8D2D5;
+}
+
+.ish-feedback--success {
+  color: #0F5C4A;
+  background: #EBF8F4;
+  border-color: #C8ECE1;
+}
+
+.ish-feedback--info,
+.ish-feedback--loading {
+  color: #0E5A73;
+  background: #F0F9FC;
+  border-color: #CEE9F2;
+}
+
+.ish-error-message {
+  padding: 0.95rem 1.15rem;
+  border-radius: var(--ish-radius-md);
+  color: #8C1D26;
+  background: #FDF2F2;
+  border: 1px solid #F8D2D5;
+  font-size: var(--ish-text-sm);
+  line-height: 1.5;
+}
+
+.ish-login-verification-help {
+  font-size: var(--ish-text-xs);
+  margin-top: 0.4rem;
+  opacity: 0.92;
+}
+
+/* Separator / Divider */
+.ish-or-divider {
+  margin: 1.45rem 0 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--ish-light-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ish-or-divider::before,
+.ish-or-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--ish-light-border);
+}
+
+/* Google Button (Disabled placeholder) */
+.ish-google-button {
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  color: var(--ish-light-text-secondary);
+  background: var(--ish-light-surface-subtle);
+  font-weight: 600;
+  font-size: var(--ish-text-sm);
+  cursor: not-allowed;
+}
+
+.ish-google-button span {
+  font-size: var(--ish-text-xs);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--ish-radius-full);
+  background: var(--ish-light-border);
+  color: var(--ish-light-text-secondary);
+}
+
+/* Links & Supplementary Text */
+.ish-signup-existing {
+  margin: -0.5rem 0 1.25rem;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+}
+
+.ish-create-link,
+.ish-auth-bottom-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+}
+
+.ish-signup-terms {
+  margin-top: 0.25rem;
+  text-align: center;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+  line-height: 1.5;
+}
+
+/* Auth States */
+.ish-state-card {
+  display: grid;
+  justify-items: start;
+  gap: 1.15rem;
+}
+
+.ish-loading-indicator {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 3px solid rgba(24, 124, 101, 0.18);
+  border-top-color: var(--ish-light-accent);
+  border-radius: 50%;
+  animation: ish-spin 0.75s linear infinite;
+}
+
+@keyframes ish-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ish-auth-success {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Responsive Auth Layout */
+@media (max-width: 960px) {
+  .ish-auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ish-auth-brand {
+    min-height: auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .ish-brand-message {
+    margin: 2rem 0;
+  }
+
+  .ish-brand-highlights {
+    display: none;
+  }
+
+  .ish-auth-main {
+    min-height: auto;
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+}

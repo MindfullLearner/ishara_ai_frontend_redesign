@@ -1,0 +1,631 @@
+
+/* ==========================================================================
+   ISHARA AI — LIVE CAMERA STUDIO (LIGHT THEME)
+   ========================================================================== */
+
+.ish-live-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F6F7F3;
+  color: #172A28;
+}
+
+.ish-live-shell {
+  width: min(100% - 3rem, 1180px);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3rem) 0 4rem;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Page Heading
+   ========================================================================== */
+
+.ish-live-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ish-live-heading h1 {
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  color: #172A28;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.ish-live-heading p {
+  color: #64748B;
+  font-size: var(--ish-text-sm);
+}
+
+.ish-live-back {
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: #187C65;
+  text-decoration: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--ish-radius-sm);
+  background: #EAF5F0;
+  border: 1px solid #CFE5DA;
+  transition: background var(--ish-transition-fast), color var(--ish-transition-fast);
+}
+
+.ish-live-back:hover {
+  background: #DCEFE6;
+  color: #12634F;
+}
+
+/* ==========================================================================
+   Studio Layout (2 Columns)
+   ========================================================================== */
+
+.ish-live-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   Main Camera Card
+   ========================================================================== */
+
+.ish-live-main-card {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(23, 42, 40, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.ish-live-card-heading {
+  padding: 1.15rem 1.75rem;
+  background: #FFFFFF;
+  border-bottom: 1px solid #DFE6E1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ish-live-card-heading strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: #172A28;
+}
+
+.ish-live-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ==========================================================================
+   Camera Status
+   ========================================================================== */
+
+.ish-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+}
+
+.ish-live-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.ish-live-status.is-permission {
+  background: #FFF7E5;
+  border: 1px solid #F5D99A;
+  color: #A66A0A;
+}
+
+.ish-live-status.is-permission i {
+  background: #D99A21;
+}
+
+.ish-live-status.is-ready {
+  background: #EAF5F0;
+  border: 1px solid #B9DDCB;
+  color: #187C65;
+}
+
+.ish-live-status.is-ready i {
+  background: #187C65;
+}
+
+.ish-live-status.is-recording {
+  background: #FEF0EF;
+  border: 1px solid #F5C7C3;
+  color: #D94841;
+}
+
+.ish-live-status.is-recording i {
+  background: #E0524B;
+  box-shadow: 0 0 8px rgba(224, 82, 75, 0.4);
+  animation: ish-pulse 1s infinite alternate;
+}
+
+.ish-live-status.is-review {
+  background: #EAF5F0;
+  border: 1px solid #B9DDCB;
+  color: #187C65;
+}
+
+.ish-live-status.is-review i {
+  background: #187C65;
+}
+
+@keyframes ish-pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Camera Viewport
+   ========================================================================== */
+
+.ish-live-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #172A28;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ish-live-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ish-live-video.is-hidden {
+  display: none;
+}
+
+.ish-live-camera-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--ish-radius-sm);
+  background: rgba(23, 42, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.ish-live-guide-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.ish-guide-frame {
+  width: 72%;
+  height: 78%;
+  border: 1px dashed rgba(255, 255, 255, 0.65);
+  border-radius: var(--ish-radius-lg);
+}
+
+.ish-live-preview-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  max-width: 420px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.ish-live-preview-symbol {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #EAF5F0;
+  border: 1px solid #CFE5DA;
+  color: #187C65;
+  display: grid;
+  place-items: center;
+}
+
+.ish-live-preview-message strong {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+}
+
+.ish-live-preview-message span {
+  font-size: var(--ish-text-sm);
+  color: #D5E1DD;
+  line-height: 1.55;
+}
+
+.ish-live-preview-disclaimer {
+  position: absolute;
+  bottom: 0.85rem;
+  font-size: 0.7rem;
+  color: #D5E1DD;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   Controls Bar
+   ========================================================================== */
+
+.ish-live-control-row {
+  padding: 1.35rem 1.75rem;
+  background: #FFFFFF;
+  border-top: 1px solid #DFE6E1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ish-live-permission-row {
+  background: #F8FAF8;
+}
+
+.ish-permission-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ish-permission-info strong {
+  font-size: var(--ish-text-sm);
+  color: #172A28;
+}
+
+.ish-permission-info span {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+}
+
+.ish-live-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ish-live-duration span {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.ish-live-duration strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.35rem;
+  font-family: var(--ish-font-mono);
+  font-weight: 700;
+  color: #172A28;
+}
+
+.is-recording-pulse {
+  color: #D94841 !important;
+}
+
+.ish-live-button-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ish-live-button {
+  height: 3.1rem;
+  padding: 0 1.35rem;
+  border-radius: var(--ish-radius-md);
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--ish-transition-fast), transform var(--ish-transition-fast), border-color var(--ish-transition-fast);
+}
+
+.ish-live-button.is-primary {
+  background: #187C65;
+  color: #FFFFFF;
+  border: 1px solid #187C65;
+  box-shadow: 0 2px 8px rgba(24, 124, 101, 0.18);
+}
+
+.ish-live-button.is-primary:hover:not(:disabled) {
+  background: #12634F;
+  border-color: #12634F;
+  transform: translateY(-1px);
+}
+
+.ish-live-button.is-secondary {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  color: #172A28;
+}
+
+.ish-live-button.is-secondary:hover:not(:disabled) {
+  background: #EAF5F0;
+  border-color: #B9D8C9;
+}
+
+.ish-live-button.is-stop {
+  background: #DC514A;
+  border: 1px solid #DC514A;
+  color: #FFFFFF;
+}
+
+.ish-live-button.is-stop:hover:not(:disabled) {
+  background: #C83D37;
+  border-color: #C83D37;
+}
+
+.ish-live-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ish-live-error {
+  padding: 1rem 1.75rem;
+  background: #FEF0EF;
+  border-top: 1px solid #F5C7C3;
+  color: #C83D37;
+  font-size: var(--ish-text-sm);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Sidebar Cards
+   ========================================================================== */
+
+.ish-live-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ish-live-tips-card,
+.ish-live-side-note {
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-xl);
+  padding: 1.65rem;
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.05);
+}
+
+.ish-live-tips-card h2,
+.ish-live-side-note h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #172A28;
+  margin-bottom: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.ish-live-tips-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.ish-live-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.ish-tip-icon-box {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--ish-radius-md);
+  background: #EAF5F0;
+  border: 1px solid #D4E9DD;
+  color: #187C65;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.ish-tip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ish-tip-content strong {
+  font-size: var(--ish-text-sm);
+  color: #172A28;
+}
+
+.ish-tip-content span {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  line-height: 1.5;
+}
+
+.ish-live-side-note p {
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  line-height: 1.65;
+}
+
+.ish-live-notice.is-warning {
+  padding: 1.25rem;
+  background: #FFF7E5;
+  border: 1px solid #F3DDAA;
+  border-radius: var(--ish-radius-lg);
+  color: #98630F;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: var(--ish-text-xs);
+}
+
+/* ==========================================================================
+   Steps & Footnote
+   ========================================================================== */
+
+.ish-live-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid #DFE6E1;
+  border-radius: var(--ish-radius-lg);
+  box-shadow: 0 4px 16px rgba(23, 42, 40, 0.04);
+}
+
+.ish-live-steps span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--ish-text-sm);
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.ish-live-steps span.is-current {
+  color: #187C65;
+  font-weight: 700;
+}
+
+.ish-live-footnote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-size: var(--ish-text-xs);
+  color: #64748B;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .ish-live-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ish-live-steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ish-live-shell {
+    width: min(100% - 2rem, 1180px);
+    padding-top: 1.75rem;
+  }
+
+  .ish-live-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ish-live-control-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem;
+  }
+
+  .ish-live-button-group {
+    flex-wrap: wrap;
+  }
+
+  .ish-live-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .ish-live-shell {
+    width: min(100% - 1.25rem, 1180px);
+  }
+
+  .ish-live-card-heading {
+    padding: 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .ish-live-preview {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ish-live-preview-message {
+    padding: 1rem;
+  }
+
+  .ish-live-tips-card,
+  .ish-live-side-note {
+    padding: 1.25rem;
+  }
+
+  .ish-live-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ish-live-button {
+    width: 100%;
+  }
+}

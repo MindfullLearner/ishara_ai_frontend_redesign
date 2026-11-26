@@ -1,0 +1,372 @@
+/* ==========================================================================
+   ISHARA AI — USER MANAGEMENT (LIGHT THEME)
+   ========================================================================== */
+
+.user-management {
+  width: 100%;
+}
+
+.users-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.users-page-heading h1 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.users-page-heading p {
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-secondary);
+  margin: 0;
+}
+
+.users-add-button {
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--ish-radius-md);
+  padding: 0.75rem 1.5rem;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 124, 101, 0.25);
+  transition: background var(--ish-transition-fast), transform var(--ish-transition-fast);
+}
+
+.users-add-button:hover {
+  background: var(--ish-light-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Toolbar & Filters
+   ========================================================================== */
+.users-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.users-search {
+  flex: 1;
+  min-width: 240px;
+}
+
+.users-search label {
+  display: block;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.45rem;
+  color: var(--ish-light-text-secondary);
+}
+
+.users-search input {
+  width: 100%;
+  height: 2.85rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.users-search input:focus {
+  outline: none;
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.users-filter-group {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.users-filter-button {
+  border: 1px solid var(--ish-light-border);
+  background: #FFFFFF;
+  border-radius: var(--ish-radius-md);
+  padding: 0.65rem 0.95rem;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  color: var(--ish-light-text-secondary);
+  cursor: pointer;
+  transition: all var(--ish-transition-fast);
+}
+
+.users-filter-button:hover {
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.users-filter-button.selected {
+  background: var(--ish-light-accent-subtle);
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+/* ==========================================================================
+   Table Container
+   ========================================================================== */
+.users-table-container {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.users-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--ish-text-sm);
+  min-width: 720px;
+}
+
+.users-table thead {
+  background: var(--ish-light-surface-subtle);
+}
+
+.users-table th {
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.users-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border-subtle);
+  color: var(--ish-light-text-primary);
+  white-space: nowrap;
+}
+
+.users-table tbody tr:hover {
+  background: rgba(24, 124, 101, 0.02);
+}
+
+.users-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.users-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--ish-light-accent-subtle);
+  color: var(--ish-light-accent);
+  border: 1px solid rgba(24, 124, 101, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--ish-text-xs);
+  flex-shrink: 0;
+}
+
+.users-user-info strong {
+  display: block;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: var(--ish-light-text-primary);
+}
+
+.users-user-info small {
+  display: block;
+  color: var(--ish-light-text-muted);
+  font-size: 0.72rem;
+  margin-top: 0.15rem;
+}
+
+.users-email,
+.users-joined {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+}
+
+/* Role & Status Badges */
+.users-role-badge,
+.users-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.users-role-badge {
+  background: var(--ish-light-surface-subtle);
+  border: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-secondary);
+}
+
+.users-role-badge.admin-role {
+  background: rgba(24, 124, 101, 0.12);
+  border-color: rgba(24, 124, 101, 0.3);
+  color: var(--ish-light-accent);
+}
+
+.users-status-badge.active {
+  background: #E8F5F1;
+  color: #16846C;
+}
+
+.users-status-badge.pending {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.users-status-badge.suspended {
+  background: #FDF2F2;
+  color: #C83B46;
+}
+
+/* Actions in row */
+.users-row-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.users-row-actions button {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  padding: 0.45rem 0.85rem;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ish-light-text-secondary);
+  transition: all var(--ish-transition-fast);
+}
+
+.users-row-actions button:hover {
+  background: var(--ish-light-surface-subtle);
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.users-delete-button {
+  color: #C83B46 !important;
+  border-color: rgba(200, 59, 70, 0.3) !important;
+}
+
+.users-delete-button:hover:not(:disabled) {
+  background: #FDF2F2 !important;
+  border-color: #C83B46 !important;
+}
+
+.users-delete-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.users-delete-error {
+  color: #C83B46;
+  margin: 0.75rem 0;
+  font-size: var(--ish-text-sm);
+  font-weight: 600;
+}
+
+.users-empty {
+  text-align: center;
+  padding: 3rem 1.5rem !important;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-sm);
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.users-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--ish-light-border);
+  gap: 1rem;
+}
+
+.users-pagination > span {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+  font-weight: 600;
+}
+
+.users-pagination-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.users-pagination-buttons button {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  cursor: pointer;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  transition: all var(--ish-transition-fast);
+}
+
+.users-pagination-buttons button:hover:not(:disabled) {
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.users-pagination-buttons button.current {
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  border-color: var(--ish-light-accent);
+}
+
+.users-pagination-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .users-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .users-add-button {
+    width: 100%;
+  }
+
+  .users-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

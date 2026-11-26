@@ -1,0 +1,231 @@
+/* ==========================================================================
+   ISHARA AI — EDIT USER (LIGHT THEME)
+   ========================================================================== */
+
+.edit-user-page {
+  width: 100%;
+  max-width: 1150px;
+  color: var(--ish-light-text-primary);
+}
+
+.edit-user-heading {
+  margin-bottom: 2rem;
+}
+
+.edit-user-back {
+  background: none;
+  border: none;
+  color: var(--ish-light-accent);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.edit-user-back:hover {
+  text-decoration: underline;
+}
+
+.edit-user-heading h1 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.edit-user-heading p {
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-secondary);
+}
+
+.edit-user-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.95fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.edit-user-card,
+.edit-user-side-card {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  padding: 2rem;
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.edit-user-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.edit-user-card-heading h3,
+.edit-user-side-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.edit-user-card-heading p,
+.edit-user-side-card p {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+  line-height: 1.6;
+}
+
+.edit-user-current-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.edit-user-current-status.active {
+  background: #E8F5F1;
+  color: #16846C;
+}
+
+.edit-user-current-status.pending {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.edit-user-current-status.suspended {
+  background: #FDF2F2;
+  color: #C83B46;
+}
+
+.edit-user-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.edit-user-field label {
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ish-light-text-primary);
+}
+
+.edit-user-field input,
+.edit-user-field select {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  outline: none;
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.edit-user-field input:focus,
+.edit-user-field select:focus {
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.edit-user-field input:disabled,
+.edit-user-field select:disabled {
+  background: var(--ish-light-surface-subtle);
+  color: var(--ish-light-text-muted);
+  cursor: not-allowed;
+}
+
+.edit-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ish-light-border);
+}
+
+.edit-user-save {
+  height: 3rem;
+  padding: 0 1.75rem;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 124, 101, 0.25);
+  transition: background var(--ish-transition-fast);
+}
+
+.edit-user-save:hover:not(:disabled) {
+  background: var(--ish-light-accent-hover);
+}
+
+.edit-user-save:disabled {
+  background: #A9BDB9;
+  cursor: not-allowed;
+}
+
+.edit-user-cancel {
+  height: 3rem;
+  padding: 0 1.25rem;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-surface-subtle);
+  border: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-secondary);
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+  cursor: pointer;
+  transition: all var(--ish-transition-fast);
+}
+
+.edit-user-cancel:hover {
+  background: #FFFFFF;
+  color: var(--ish-light-text-primary);
+}
+
+.edit-user-side-card dl {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+}
+
+.edit-user-side-card dt {
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ish-light-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.edit-user-side-card dd {
+  margin: 0;
+  font-size: var(--ish-text-sm);
+  font-weight: 600;
+  color: var(--ish-light-text-primary);
+}
+
+@media (max-width: 850px) {
+  .edit-user-layout {
+    grid-template-columns: 1fr;
+  }
+}

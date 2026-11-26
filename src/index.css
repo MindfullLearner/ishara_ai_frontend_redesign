@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ==========================================================================
+     ISHARA AI — HYBRID DESIGN SYSTEM TOKENS
+     ========================================================================== */
+
+  /* Typography */
+  --ish-font-sans: 'DM Sans', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ish-font-display: 'Manrope', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ish-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font sizes */
+  --ish-text-xs: 0.75rem;     /* 12px */
+  --ish-text-sm: 0.84rem;     /* 13.5px */
+  --ish-text-base: 0.95rem;   /* 15.2px */
+  --ish-text-md: 1.05rem;     /* 16.8px */
+  --ish-text-lg: 1.15rem;     /* 18.4px */
+  --ish-text-xl: 1.35rem;     /* 21.6px */
+  --ish-text-2xl: 1.65rem;    /* 26.4px */
+  --ish-text-3xl: 2.1rem;     /* 33.6px */
+  --ish-text-4xl: 2.85rem;    /* 45.6px */
+
+  /* Spacing Scale */
+  --ish-space-1: 0.25rem;
+  --ish-space-2: 0.5rem;
+  --ish-space-3: 0.75rem;
+  --ish-space-4: 1rem;
+  --ish-space-5: 1.25rem;
+  --ish-space-6: 1.5rem;
+  --ish-space-7: 1.75rem;
+  --ish-space-8: 2rem;
+  --ish-space-10: 2.5rem;
+  --ish-space-12: 3rem;
+  --ish-space-16: 4rem;
+
+  /* Border Radii */
+  --ish-radius-xs: 0.35rem;
+  --ish-radius-sm: 0.5rem;
+  --ish-radius-md: 0.75rem;
+  --ish-radius-lg: 1rem;
+  --ish-radius-xl: 1.25rem;
+  --ish-radius-2xl: 1.5rem;
+  --ish-radius-full: 9999px;
+
+  /* Transitions */
+  --ish-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ish-transition-normal: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ish-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shared Semantic Colors (Status) */
+  --ish-success: #16846C;
+  --ish-success-light: #E8F5F1;
+  --ish-success-dark: #34D399;
+  --ish-error: #C83B46;
+  --ish-error-light: #FDF2F2;
+  --ish-error-dark: #F87171;
+  --ish-warning: #D97706;
+  --ish-warning-light: #FFFBEB;
+  --ish-warning-dark: #FBBF24;
+  --ish-info: #0284C7;
+  --ish-info-light: #F0F9FF;
+  --ish-info-dark: #60A5FA;
+
+  /* ==========================================================================
+     LIGHT THEME (Default / Authentication & Admin)
+     ========================================================================== */
+  --ish-light-bg: #F6F7F3;
+  --ish-light-surface: #FFFFFF;
+  --ish-light-surface-subtle: #EEF2EF;
+  --ish-light-surface-elevated: #FFFFFF;
+  --ish-light-border: #DFE6E1;
+  --ish-light-border-subtle: #E8EFEA;
+  --ish-light-border-strong: #CAD5CE;
+  --ish-light-accent: #187C65;
+  --ish-light-accent-hover: #136653;
+  --ish-light-accent-subtle: rgba(24, 124, 101, 0.08);
+  --ish-light-text-primary: #172A28;
+  --ish-light-text-secondary: #4A5F5C;
+  --ish-light-text-muted: #728885;
+  --ish-light-shadow-sm: 0 1px 3px rgba(23, 42, 40, 0.05), 0 1px 2px rgba(23, 42, 40, 0.04);
+  --ish-light-shadow-md: 0 4px 14px rgba(23, 42, 40, 0.06), 0 2px 4px rgba(23, 42, 40, 0.03);
+  --ish-light-shadow-lg: 0 12px 32px rgba(23, 42, 40, 0.08), 0 4px 10px rgba(23, 42, 40, 0.04);
+  --ish-light-focus: 0 0 0 3px rgba(24, 124, 101, 0.22);
+
+  /* ==========================================================================
+     DARK THEME (User Workspace)
+     ========================================================================== */
+  --ish-dark-bg: #101B2A;
+  --ish-dark-surface: #172638;
+  --ish-dark-surface-elevated: #1E3147;
+  --ish-dark-surface-hover: #22374E;
+  --ish-dark-surface-subtle: #132132;
+  --ish-dark-border: #263B4E;
+  --ish-dark-border-subtle: #1C2D3D;
+  --ish-dark-border-strong: #334E66;
+  --ish-dark-accent: #64D8BA;
+  --ish-dark-accent-hover: #7EECD0;
+  --ish-dark-accent-subtle: rgba(100, 216, 186, 0.12);
+  --ish-dark-accent-glow: 0 0 24px rgba(100, 216, 186, 0.22);
+  --ish-dark-text-primary: #F1F5F4;
+  --ish-dark-text-secondary: #94A3B8;
+  --ish-dark-text-muted: #64748B;
+  --ish-dark-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.28);
+  --ish-dark-shadow-md: 0 6px 20px rgba(0, 0, 0, 0.36), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --ish-dark-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.44), 0 4px 12px rgba(0, 0, 0, 0.24);
+  --ish-dark-focus: 0 0 0 3px rgba(100, 216, 186, 0.32);
+
+  /* Compatibility Fallback Tokens */
+  --ish-blue: #187C65;
+  --ish-blue-deep: #136653;
+  --ish-blue-soft: #E8F5F1;
+  --ish-teal: #64D8BA;
+  --ish-teal-deep: #187C65;
+  --ish-yellow: #FBBF24;
+  --ish-beige: #F6F7F3;
+  --ish-white: #FFFFFF;
+  --ish-ink: #172A28;
+  --ish-muted: #6C827F;
+  --ish-border: #DFE6E1;
+  --ish-danger: #C83B46;
+  --ish-danger-bg: #FDF2F2;
+  --ish-success-bg: #E8F5F1;
+  --ish-focus: var(--ish-light-focus);
+  --ish-radius-card: var(--ish-radius-xl);
+  --ish-shadow-card: var(--ish-light-shadow-md);
+}
+
+/* Base Reset & Foundations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  font-family: var(--ish-font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  font-family: var(--ish-font-sans);
+  background: var(--ish-light-bg);
+  color: var(--ish-light-text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ish-font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ish-light-focus);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: var(--ish-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

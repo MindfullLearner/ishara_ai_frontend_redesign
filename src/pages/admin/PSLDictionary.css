@@ -1,0 +1,361 @@
+/* ==========================================================================
+   ISHARA AI — PSL DICTIONARY (LIGHT THEME)
+   ========================================================================== */
+
+.psl-dictionary-page {
+  width: 100%;
+  color: var(--ish-light-text-primary);
+}
+
+.psl-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.psl-page-heading h1 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.psl-page-heading p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  margin: 0;
+}
+
+.psl-primary-btn {
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 124, 101, 0.25);
+  transition: background var(--ish-transition-fast), transform var(--ish-transition-fast);
+}
+
+.psl-primary-btn:hover {
+  background: var(--ish-light-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Search & Filter Section
+   ========================================================================== */
+.psl-search-section {
+  margin-bottom: 1.75rem;
+}
+
+.psl-search-section label {
+  display: block;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ish-light-text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.psl-search-and-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.psl-search-and-filters > input {
+  flex: 1;
+  min-width: 240px;
+  height: 2.85rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+  outline: none;
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.psl-search-and-filters > input:focus {
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.psl-filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.psl-filter-buttons button {
+  height: 2.85rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--ish-transition-fast);
+}
+
+.psl-filter-buttons button:hover {
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.psl-filter-buttons button.active {
+  background: var(--ish-light-accent-subtle);
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+/* ==========================================================================
+   Table Container
+   ========================================================================== */
+.psl-table-container {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.psl-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.psl-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--ish-text-sm);
+  min-width: 720px;
+}
+
+.psl-table thead {
+  background: var(--ish-light-surface-subtle);
+}
+
+.psl-table th {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.psl-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border-subtle);
+  color: var(--ish-light-text-primary);
+  white-space: nowrap;
+}
+
+.psl-table tbody tr:hover {
+  background: rgba(24, 124, 101, 0.02);
+}
+
+.psl-word-cell strong {
+  display: block;
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: var(--ish-light-text-primary);
+}
+
+.psl-word-cell small {
+  display: block;
+  color: var(--ish-light-text-muted);
+  font-size: 0.72rem;
+  margin-top: 0.15rem;
+}
+
+.psl-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  background: var(--ish-light-surface-subtle);
+  border: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.psl-media-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--ish-text-xs);
+}
+
+.psl-media-status span {
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--ish-radius-xs);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.psl-media-status .has-video {
+  background: #E0F2FE;
+  color: #0284C7;
+}
+
+.psl-media-status .has-image {
+  background: #E8F5F1;
+  color: #16846C;
+}
+
+.psl-media-status .no-media {
+  background: #F3F4F6;
+  color: #9CA3AF;
+}
+
+.psl-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.psl-status-badge.reviewed {
+  background: #E8F5F1;
+  color: #16846C;
+}
+
+.psl-status-badge.draft {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.psl-action-buttons {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.psl-action-buttons button {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  padding: 0.4rem 0.85rem;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ish-light-text-secondary);
+  transition: all var(--ish-transition-fast);
+}
+
+.psl-action-buttons button:hover {
+  background: var(--ish-light-surface-subtle);
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.psl-action-buttons button.delete-btn {
+  color: #C83B46;
+  border-color: rgba(200, 59, 70, 0.3);
+}
+
+.psl-action-buttons button.delete-btn:hover {
+  background: #FDF2F2;
+  border-color: #C83B46;
+}
+
+.psl-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-sm);
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.psl-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--ish-light-border);
+  gap: 1rem;
+}
+
+.psl-pagination > span {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+  font-weight: 600;
+}
+
+.psl-pagination-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.psl-pagination-buttons button {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  cursor: pointer;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  transition: all var(--ish-transition-fast);
+}
+
+.psl-pagination-buttons button:hover:not(:disabled) {
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.psl-pagination-buttons button.current {
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  border-color: var(--ish-light-accent);
+}
+
+.psl-pagination-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .psl-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .psl-primary-btn {
+    width: 100%;
+  }
+
+  .psl-search-and-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .psl-filter-buttons {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+}

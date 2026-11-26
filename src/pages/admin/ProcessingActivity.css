@@ -1,0 +1,336 @@
+/* ==========================================================================
+   ISHARA AI — PROCESSING ACTIVITY (LIGHT THEME)
+   ========================================================================== */
+
+.processing-page {
+  width: 100%;
+  color: var(--ish-light-text-primary);
+}
+
+.processing-heading {
+  margin-bottom: 2rem;
+}
+
+.processing-heading h1 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.processing-heading p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Summary Cards
+   ========================================================================== */
+.processing-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.processing-summary-card {
+  padding: 1.5rem;
+  border-radius: var(--ish-radius-xl);
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  box-shadow: var(--ish-light-shadow-sm);
+  transition: transform var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.processing-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ish-light-shadow-md);
+}
+
+.processing-summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.processing-summary-top span {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.processing-summary-top strong {
+  color: var(--ish-light-accent);
+  font-family: var(--ish-font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.processing-summary-card p {
+  margin: 0.65rem 0 0;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+}
+
+/* ==========================================================================
+   Filter Section
+   ========================================================================== */
+.processing-filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  margin-bottom: 2rem;
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.processing-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1 1 180px;
+}
+
+.processing-filter-field label {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.processing-filter-field input,
+.processing-filter-field select {
+  width: 100%;
+  height: 2.85rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  outline: none;
+  background: #FFFFFF;
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+  box-sizing: border-box;
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.processing-filter-field input:focus,
+.processing-filter-field select:focus {
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.processing-apply-btn,
+.processing-reset-btn {
+  height: 2.85rem;
+  padding: 0 1.35rem;
+  border-radius: var(--ish-radius-md);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--ish-transition-fast);
+}
+
+.processing-apply-btn {
+  border: none;
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(24, 124, 101, 0.25);
+}
+
+.processing-apply-btn:hover {
+  background: var(--ish-light-accent-hover);
+}
+
+.processing-reset-btn {
+  border: 1px solid var(--ish-light-border);
+  background: var(--ish-light-surface-subtle);
+  color: var(--ish-light-text-secondary);
+}
+
+.processing-reset-btn:hover {
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+  background: #FFFFFF;
+}
+
+/* ==========================================================================
+   Jobs Table Card
+   ========================================================================== */
+.processing-table-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--ish-radius-xl);
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.processing-table-heading {
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.processing-table-heading h2 {
+  color: var(--ish-light-text-primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.processing-table-heading span {
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+}
+
+.processing-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.processing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.processing-table thead {
+  background: var(--ish-light-surface-subtle);
+}
+
+.processing-table th {
+  padding: 1rem 1.25rem;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.processing-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border-subtle);
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-primary);
+}
+
+.processing-table tbody tr:hover {
+  background: rgba(24, 124, 101, 0.02);
+}
+
+.processing-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.processing-status-badge.completed { background: #E8F5F1; color: #16846C; }
+.processing-status-badge.processing { background: #E0F2FE; color: #0284C7; }
+.processing-status-badge.pending { background: #FFFBEB; color: #D97706; }
+.processing-status-badge.failed { background: #FDF2F2; color: #C83B46; }
+
+.processing-action-btn {
+  height: 2.2rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--ish-transition-fast);
+}
+
+.processing-action-btn:hover {
+  background: var(--ish-light-surface-subtle);
+  border-color: var(--ish-light-accent);
+  color: var(--ish-light-accent);
+}
+
+.processing-empty-state {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-sm);
+}
+
+/* Pagination */
+.processing-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--ish-light-border);
+}
+
+.processing-pagination span {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+  font-weight: 600;
+}
+
+.processing-pagination-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.processing-pagination-buttons button {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.processing-pagination-buttons button.current {
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  border-color: var(--ish-light-accent);
+}
+
+.processing-pagination-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .processing-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .processing-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .processing-filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

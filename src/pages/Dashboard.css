@@ -1,0 +1,443 @@
+
+/* ==========================================================================
+   ISHARA AI — USER DASHBOARD (LIGHT THEME)
+   Matches the Admin Dashboard design system
+   ========================================================================== */
+
+.ish-user-dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ish-light-bg);
+  color: var(--ish-light-text-primary);
+}
+
+.ish-user-content {
+  flex: 1;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+}
+
+.ish-user-container {
+  width: min(100% - 3rem, 1140px);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   Welcome Card
+   ========================================================================== */
+
+.ish-user-welcome-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FBF9 100%);
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-2xl);
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: var(--ish-light-shadow-md);
+  margin-bottom: 2rem;
+}
+
+.ish-welcome-glow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(24, 124, 101, 0.09) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.ish-welcome-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.ish-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--ish-radius-full);
+  background: var(--ish-light-accent-subtle);
+  border: 1px solid rgba(24, 124, 101, 0.18);
+  color: var(--ish-light-accent);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.ish-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16846C;
+  box-shadow: 0 0 5px rgba(22, 132, 108, 0.35);
+}
+
+.ish-user-welcome-card h1 {
+  font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.ish-name-accent {
+  color: var(--ish-light-accent);
+}
+
+.ish-user-welcome-card p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-base);
+  line-height: 1.6;
+}
+
+.ish-welcome-stats-bar {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ish-light-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.ish-welcome-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ish-stat-label {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.ish-stat-val {
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-primary);
+  font-weight: 600;
+}
+
+.ish-stat-val.is-online {
+  color: #16846C;
+}
+
+/* ==========================================================================
+   Action Cards Grid
+   ========================================================================== */
+
+.ish-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.ish-action-card {
+  background: var(--ish-light-surface);
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--ish-light-shadow-sm);
+  transition:
+    transform var(--ish-transition-fast),
+    border-color var(--ish-transition-fast),
+    box-shadow var(--ish-transition-fast);
+}
+
+.ish-action-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(24, 124, 101, 0.35);
+  box-shadow: var(--ish-light-shadow-md);
+}
+
+.ish-action-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.ish-action-icon-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--ish-radius-lg);
+  background: #EAF5F0;
+  border: 1px solid rgba(24, 124, 101, 0.12);
+  color: var(--ish-light-accent);
+  display: grid;
+  place-items: center;
+}
+
+.ish-card-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+}
+
+.ish-card-tag.is-live {
+  background: #E8F5F1;
+  border: 1px solid rgba(22, 132, 108, 0.2);
+  color: #16846C;
+}
+
+.ish-card-tag.is-recorded {
+  background: #EFF6FF;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #2563A6;
+}
+
+.ish-action-card-body h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.02em;
+}
+
+.ish-action-card-body p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.ish-action-btn-primary {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 1.25rem;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: var(--ish-text-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  box-shadow: 0 3px 10px rgba(24, 124, 101, 0.16);
+  transition:
+    background var(--ish-transition-fast),
+    transform var(--ish-transition-fast);
+}
+
+.ish-action-btn-primary:hover {
+  background: var(--ish-light-accent-hover);
+  transform: translateY(-1px);
+}
+
+.ish-action-btn-secondary {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 1.25rem;
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-primary);
+  font-weight: 700;
+  font-size: var(--ish-text-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition:
+    background var(--ish-transition-fast),
+    border-color var(--ish-transition-fast);
+}
+
+.ish-action-btn-secondary:hover {
+  background: var(--ish-light-surface-subtle);
+  border-color: rgba(24, 124, 101, 0.35);
+}
+
+/* ==========================================================================
+   Recent Translations Panel
+   ========================================================================== */
+
+.ish-history-panel {
+  background: var(--ish-light-surface);
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.ish-history-panel-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--ish-light-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ish-history-panel-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.ish-history-panel-header p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+}
+
+.ish-panel-link {
+  font-size: var(--ish-text-sm);
+  font-weight: 700;
+  color: var(--ish-light-accent);
+  text-decoration: none;
+  transition: color var(--ish-transition-fast);
+}
+
+.ish-panel-link:hover {
+  color: var(--ish-light-accent-hover);
+  text-decoration: underline;
+}
+
+.ish-history-empty {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.ish-empty-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #EAF5F0;
+  border: 1px solid rgba(24, 124, 101, 0.12);
+  color: var(--ish-light-accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.ish-history-empty strong {
+  font-size: 1.15rem;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.ish-history-empty p {
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.ish-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ish-btn-sm-primary {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--ish-radius-sm);
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  font-size: var(--ish-text-xs);
+  font-weight: 800;
+  transition: background var(--ish-transition-fast);
+}
+
+.ish-btn-sm-primary:hover {
+  background: var(--ish-light-accent-hover);
+}
+
+.ish-btn-sm-secondary {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  transition:
+    background var(--ish-transition-fast),
+    border-color var(--ish-transition-fast);
+}
+
+.ish-btn-sm-secondary:hover {
+  background: var(--ish-light-surface-subtle);
+  border-color: rgba(24, 124, 101, 0.35);
+}
+
+/* ==========================================================================
+   Dashboard Footer
+   ========================================================================== */
+
+.ish-user-workspace-footer {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--ish-light-border);
+  background: #FFFFFF;
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-muted);
+}
+
+.ish-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .ish-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ish-footer-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ish-user-container {
+    width: min(100% - 2rem, 1140px);
+  }
+
+  .ish-history-panel-header {
+    padding: 1.25rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .ish-action-card {
+    padding: 1.5rem;
+  }
+
+  .ish-history-empty {
+    padding: 2.5rem 1.25rem;
+  }
+}

@@ -1,0 +1,231 @@
+/* ==========================================================================
+   ISHARA AI — USER WORKSPACE HEADER (DARK THEME)
+   ========================================================================== */
+
+.ish-user-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 4.25rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: #172638;
+  border-bottom: 1px solid #263B4E;
+  color: #F1F5F4;
+}
+
+.ish-user-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ish-user-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: #F1F5F4;
+}
+
+.ish-user-brand-icon {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: var(--ish-radius-md);
+  background: #101B2A;
+  border: 1px solid #263B4E;
+  color: #64D8BA;
+  display: grid;
+  place-items: center;
+}
+
+.ish-user-brand-title {
+  font-family: var(--ish-font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #F1F5F4;
+}
+
+.ish-user-brand-title span {
+  color: #64D8BA;
+}
+
+.ish-workspace-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--ish-radius-full);
+  background: rgba(100, 216, 186, 0.12);
+  border: 1px solid rgba(100, 216, 186, 0.25);
+  color: #64D8BA;
+}
+
+/* Nav items */
+.ish-user-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #101B2A;
+  padding: 0.3rem 0.4rem;
+  border-radius: var(--ish-radius-lg);
+  border: 1px solid #263B4E;
+}
+
+.ish-user-nav-link {
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--ish-radius-md);
+  font-size: var(--ish-text-sm);
+  font-weight: 600;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color var(--ish-transition-fast), background-color var(--ish-transition-fast);
+}
+
+.ish-user-nav-link:hover {
+  color: #F1F5F4;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ish-user-nav-link.is-active {
+  color: #101B2A;
+  background: #64D8BA;
+  font-weight: 700;
+}
+
+/* User Account */
+.ish-user-account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ish-user-account-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ish-user-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: #1E3147;
+  border: 1px solid #263B4E;
+  color: #64D8BA;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: grid;
+  place-items: center;
+}
+
+.ish-user-name {
+  font-size: var(--ish-text-sm);
+  font-weight: 600;
+  color: #F1F5F4;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ish-user-signout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--ish-radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #263B4E;
+  color: #94A3B8;
+  font-size: var(--ish-text-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--ish-transition-fast), background var(--ish-transition-fast), border-color var(--ish-transition-fast);
+}
+
+.ish-user-signout-btn:hover {
+  color: #F87171;
+  background: rgba(248, 113, 113, 0.08);
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.ish-user-mobile-menu-btn {
+  display: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--ish-radius-sm);
+  color: #F1F5F4;
+  align-items: center;
+  justify-content: center;
+}
+
+.ish-user-mobile-drawer {
+  display: none;
+}
+
+/* Mobile Header Styles */
+@media (max-width: 900px) {
+  .ish-user-nav {
+    display: none;
+  }
+
+  .ish-user-name,
+  .ish-user-signout-btn {
+    display: none;
+  }
+
+  .ish-user-mobile-menu-btn {
+    display: flex;
+  }
+
+  .ish-user-mobile-drawer {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #172638;
+    border-bottom: 1px solid #263B4E;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .ish-user-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ish-user-mobile-nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: var(--ish-radius-md);
+    color: #94A3B8;
+    font-size: var(--ish-text-base);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .ish-user-mobile-nav-link.is-active {
+    background: #101B2A;
+    color: #64D8BA;
+  }
+
+  .ish-user-mobile-signout {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--ish-radius-md);
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    color: #F87171;
+    font-size: var(--ish-text-sm);
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+  }
+}

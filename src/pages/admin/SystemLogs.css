@@ -1,0 +1,362 @@
+/* ==========================================================================
+   ISHARA AI — SYSTEM LOGS (LIGHT THEME)
+   ========================================================================== */
+
+.system-logs-page {
+  width: 100%;
+  color: var(--ish-light-text-primary);
+}
+
+.system-logs-heading {
+  margin-bottom: 2rem;
+}
+
+.system-logs-heading h1 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.system-logs-heading p {
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Toolbar & Filters
+   ========================================================================== */
+.system-logs-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.system-logs-search {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  height: 2.85rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  background: #FFFFFF;
+  flex: 1 1 240px;
+  box-sizing: border-box;
+  transition: border-color var(--ish-transition-fast), box-shadow var(--ish-transition-fast);
+}
+
+.system-logs-search:focus-within {
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.system-logs-search span {
+  color: var(--ish-light-text-muted);
+  font-size: 1.1rem;
+}
+
+.system-logs-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+}
+
+.system-logs-toolbar select {
+  height: 2.85rem;
+  min-width: 160px;
+  padding: 0 1rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-md);
+  outline: none;
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-sm);
+  cursor: pointer;
+  transition: border-color var(--ish-transition-fast);
+}
+
+.system-logs-toolbar select:focus {
+  border-color: var(--ish-light-accent);
+  box-shadow: var(--ish-light-focus);
+}
+
+.system-logs-export {
+  height: 2.85rem;
+  padding: 0 1.35rem;
+  border: none;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 124, 101, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: background var(--ish-transition-fast);
+}
+
+.system-logs-export:hover {
+  background: var(--ish-light-accent-hover);
+}
+
+/* Severity Legend */
+.system-logs-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.system-logs-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+}
+
+.system-logs-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.system-logs-dot.info { background: #0284C7; }
+.system-logs-dot.warn { background: #D97706; }
+.system-logs-dot.error { background: #C83B46; }
+.system-logs-dot.critical { background: #991B1B; }
+
+/* ==========================================================================
+   Table Container
+   ========================================================================== */
+.system-logs-table-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--ish-radius-xl);
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  box-shadow: var(--ish-light-shadow-sm);
+}
+
+.system-logs-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.system-logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.system-logs-table thead {
+  background: var(--ish-light-surface-subtle);
+}
+
+.system-logs-table th {
+  padding: 1rem 1.25rem;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.system-logs-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ish-light-border-subtle);
+  color: var(--ish-light-text-primary);
+  font-size: var(--ish-text-sm);
+}
+
+.system-logs-table tbody tr {
+  cursor: pointer;
+  transition: background-color var(--ish-transition-fast);
+}
+
+.system-logs-table tbody tr:hover,
+.system-logs-table tbody tr.selected {
+  background: rgba(24, 124, 101, 0.04);
+}
+
+.system-logs-table td:first-child {
+  font-family: var(--ish-font-mono);
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-muted);
+}
+
+.system-logs-event {
+  color: var(--ish-light-text-primary) !important;
+  font-weight: 600;
+}
+
+.system-logs-severity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ish-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.system-logs-severity.info { background: #E0F2FE; color: #0284C7; }
+.system-logs-severity.warn { background: #FEF3C7; color: #D97706; }
+.system-logs-severity.error { background: #FEE2E2; color: #C83B46; }
+.system-logs-severity.critical { background: #FEE2E2; color: #991B1B; }
+
+.system-logs-empty {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  color: var(--ish-light-text-muted);
+  font-size: var(--ish-text-sm);
+}
+
+/* Pagination */
+.system-logs-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--ish-light-border);
+}
+
+.system-logs-pagination span {
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-secondary);
+  font-weight: 600;
+}
+
+.system-logs-pagination-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.system-logs-pagination-buttons button {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-sm);
+  background: #FFFFFF;
+  color: var(--ish-light-text-secondary);
+  font-size: var(--ish-text-xs);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.system-logs-pagination-buttons button.current {
+  background: var(--ish-light-accent);
+  color: #FFFFFF;
+  border-color: var(--ish-light-accent);
+}
+
+.system-logs-pagination-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Details Panel / Modal */
+.system-logs-detail-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 27, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 100;
+}
+
+.system-logs-detail-modal {
+  background: #FFFFFF;
+  border: 1px solid var(--ish-light-border);
+  border-radius: var(--ish-radius-2xl);
+  width: min(100%, 580px);
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.system-logs-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ish-light-border);
+}
+
+.system-logs-detail-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ish-light-text-primary);
+}
+
+.system-logs-detail-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ish-light-text-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.system-logs-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.system-logs-detail-item strong {
+  display: block;
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.system-logs-detail-item span {
+  font-size: var(--ish-text-sm);
+  color: var(--ish-light-text-primary);
+  font-weight: 600;
+}
+
+.system-logs-detail-content pre {
+  margin: 0;
+  padding: 1rem;
+  border-radius: var(--ish-radius-md);
+  background: var(--ish-light-surface-subtle);
+  border: 1px solid var(--ish-light-border);
+  font-family: var(--ish-font-mono);
+  font-size: var(--ish-text-xs);
+  color: var(--ish-light-text-primary);
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .system-logs-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
